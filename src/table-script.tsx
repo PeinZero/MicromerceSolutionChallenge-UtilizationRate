@@ -47,9 +47,10 @@ const tableData: TableDataType[] =  filteredData.map((dataRow, index) => {
   const {utilisationRateLastTwelveMonths, utilisationRateYearToDate, lastThreeMonthsIndividually} = data!.workforceUtilisation || {};
 
   // May Utilisation is not available in the data !!
+  // We could make a function to extract this information from the data. But I'm not going to do that now.
   const mayUtilisationRate = (lastThreeMonthsIndividually?.find(data => data.month === "May"))?.utilisationRate ?? "0.00";
   const juneUtilisationRate = (lastThreeMonthsIndividually?.find(data => data.month === "June"))?.utilisationRate ?? "0.00";
- const julyUtilisationRate = (lastThreeMonthsIndividually?.find(data => data.month === "July"))?.utilisationRate ?? "0.00";
+  const julyUtilisationRate = (lastThreeMonthsIndividually?.find(data => data.month === "July"))?.utilisationRate ?? "0.00";
 
   const monthlySalary = data?.statusAggregation?.monthlySalary || "N/A";
 
